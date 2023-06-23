@@ -37,3 +37,4 @@ the security methods is manily on the Database in Mongodb
 * I am using hash algorithms to secure the passwords
 * I am blocking strange ip acess to acess the project database
 * This project will be modded by me (upgrading mainly the frontend)
+* The project setting like mongodb url and session secure key are in a .env file
