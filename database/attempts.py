@@ -2,10 +2,8 @@ from hashlib import sha3_512
 import requests
 import pymongo
 import socket
-from dotenv import load_dotenv
 import os
 
-load_dotenv()
 # URL TO CONNECT
 url = os.getenv('MONGO_URL')
 
