@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Wellcome to MyDay</title>
+
+    <script src="{{url_for('static', filename='scripts/home.js')}}"></script>
+    
+    <link rel="stylesheet" href="{{url_for('static', filename='css/home.css') }}">
+
+</head>
+<body>
+    <header id="pagetitle">
+        <a href="/" class="loginRedirect">
+            <img class="userimg" src="{{url_for('static', filename='img/MyDayWeb.png')}}">
+        </a>
+
+        <h2>MyDay</h2>
+
+        <a href="/auth/checksession" class="loginRedirect">
+            <img class="userimg" src="{{url_for('static', filename='img/person-icon.png')}}">
+        </a>
+    </header>
+
+    <div class="maindiv">
+        <header>
+            {% if notConnected %}
+                <h2>Olá! faça login em uma conta para usar o Myday</h2>
+            {% else %}
+                <h2>Suas tarefas {{ session['username'] }}!</h2>
+                <form action="/newtask">
+                    <button>Criar nova tarefa</button>
+                </form>
+            {% endif %}
+        </header>
+    
+        {% if taskdata %}
+            <!-- Se houver tarefas -->
+            {% for task in taskdata %}
+                <form class="taskcontend" action="/function/api/mongodb/killtask/?taskname={{ task['taskname'] }}" method="POST">
+                    <ul><strong>
+                        {{ task['taskname'] }}
+                    </strong></ul>
+    
+                    <a href="/user/mytasks/?taskname={{task['taskname']}}">ver mais</a>
+                    <button type="submit">finalizar tarefa</button>
+                </form>
+            {% endfor %}
+    
+        {% elif notConnected %}
+            <!-- Se não estiver ligado a uma conta -->
+            <h4>Você não está ligado a uma conta!</h4>
+            <br>
+
+            <h4>venha criar seu usuário agora!</h4>
+            <a href="/auth/register/new">registrar</a>
+
+            <h4>Já possui uma conta? venha fazer login!</h4>
+            <a href="/auth/login/new">entrar</a>
+
+        {% else %}
+            <!-- Se não houver tarefas -->
+            <h4>Você não possui tarefas no momento!</h4>
+    
+        {% endif %}
+    </div>
+    
+</body>
+</html>

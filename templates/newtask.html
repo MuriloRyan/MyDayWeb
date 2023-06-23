@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Wellcome to MyDay</title>
+
+    <script src="{{url_for('static', filename='scripts/home.js')}}"></script>
+    
+    <link rel="stylesheet" href="{{url_for('static', filename='css/home.css') }}">
+
+</head>
+<body>
+    <header id="pagetitle">
+        <a href="/" class="loginRedirect">
+            <img class="userimg" src="{{url_for('static', filename='img/MyDayWeb.png')}}">
+        </a>
+
+        <h2>MyDay</h2>
+
+        <a href="/auth/checksession" class="loginRedirect">
+            <img class="userimg" src="{{url_for('static', filename='img/person-icon.png')}}">
+        </a>
+    </header>
+
+    <form action="/function/api/mongodb/newtask" method="POST" class="maindiv">
+        <header>
+            <h2>Dê um nome e comentario para a tarefa</h2>
+       </header><br>
+        
+        <h3>{{message}}</h3>
+
+        <input type="text" name="newTaskName" placeholder="Nome da terefa" required><br>
+        <br>
+
+        <input type="text" name="newTaskComment" placeholder="Comentario" required><br>
+       <br>
+
+        <input type="submit" value="Criar terefa">
+    </form> 
+
+</body>
+</html>

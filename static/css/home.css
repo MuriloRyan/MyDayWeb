@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+* { margin: 0; padding: 0;}
+
+body
+{
+    background-color: aliceblue;
+    font-family: 'Roboto', sans-serif;
+    color: rgb(19, 18, 18);
+}
+
+#pagetitle
+{
+    background-color: rgb(238, 233, 230);
+    display: flex;
+    flex-wrap: nowrap;
+
+    justify-content: space-between; 
+
+    width: 100%;
+    max-height: 100px;
+
+    border: 2px solid rgb(102, 106, 109);
+}
+
+#pagetitle h2
+{
+    padding-top: 0.5%;
+    text-align: center;
+}
+.initMsg {
+    margin-left: 0.3%;
+}
+
+.userimg
+{
+    padding-right: 3%;
+    padding-left: 3%;
+
+    width: 3rem;
+    height: 3rem;
+
+    border-radius: 25%;
+}
+.loginRedirect {
+    margin-right: 0.3%;
+}
+
+#loginform {
+    background-color: antiquewhite;
+
+    padding: 2%;
+    margin: 5%;
+}#loginform h3 {text-align: center; background-color: wheat;}
+
+#loginform input {
+    border: 2px solid rgb(102, 106, 109);;
+    border-radius: 5%;
+
+    padding: 0.3%;
+}
+
+.maindiv {
+    background-color: rgb(228, 228, 228);
+    border: solid 2px gray;
+
+    padding: 0.3%;
+    margin: 3%;
+    padding-left: 1%;
+} .maindiv header {
+        background-color: rgb(233, 225, 225);
+        display: flex;
+        justify-content: space-between;
+} .maindiv header {
+    padding-bottom: 0.3%;
+} .maindivRedirect {
+    font-size: 3rem;
+
+    width: 100%;
+    padding: 0.3%;
+}
+
+.taskcontend {
+    background-color: rgb(226, 214, 214);
+    border: solid 2px gray;
+
+    padding-left: 0.3%;
+    padding-right: 0.3%;
+
+    margin: 0.3%;
+
+    justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+
+    width: 50%;
+}

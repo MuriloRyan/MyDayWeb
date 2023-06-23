@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Wellcome to MyDay</title>
+
+    <script src="{{url_for('static', filename='scripts/home.js')}}"></script>
+    
+    <link rel="stylesheet" href="{{url_for('static', filename='css/home.css') }}">
+
+</head>
+<body>
+
+    <header id="pagetitle">
+        <a href="/" class="loginRedirect">
+            <img class="userimg" src="{{url_for('static', filename='img/MyDayWeb.png')}}">
+        </a>
+
+        <h2>MyDay</h2>
+
+        <a href="/auth/checksession" class="loginRedirect">
+            <img class="userimg" src="{{url_for('static', filename='img/person-icon.png')}}">
+        </a>
+    </header>
+
+    <div class="maindiv">
+        <header> <h3>Seus dados de usuario:</h3> </header>
+
+            <br>
+            <h4>Nome de usuario: {{session['username']}}</h4>
+            <h4>Email: {{session['email']}}</h4>
+
+            <br>
+            <a href="/function/session/exit">sair da minha conta</a>
+            <h5>Aviso, um unico click irá lhe fazer sair direto</h5>
+
+            <br>
+            <form action="/">
+                <button class="maindivRedirect" type="submit">
+                    Voltar as minhas atividades
+                </button>
+            </form>
+    </div>
+
+</body>
+</html>
