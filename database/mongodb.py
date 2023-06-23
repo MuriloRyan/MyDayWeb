@@ -1,16 +1,8 @@
 from hashlib import sha3_512
-try:
-    from database.attempts import addAttemp
-    from database.userconfig import User
-except:
-    from attempts import addAttemp
-    from userconfig import User
-
+from database.attempts import addAttemp
+from database.userconfig import User
 import pymongo
-from dotenv import load_dotenv
 import os
-
-load_dotenv()
 
 # URL TO CONNECT
 url = os.getenv('MONGO_URL')
