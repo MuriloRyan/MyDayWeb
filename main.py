@@ -2,10 +2,7 @@ from flask import Flask, render_template,request, redirect, session
 from flask_session import Session
 from database.userconfig import User
 import database.mongodb as db
-from dotenv import load_dotenv
 import os
-
-load_dotenv()
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.getenv('SESSION_KEY') 
